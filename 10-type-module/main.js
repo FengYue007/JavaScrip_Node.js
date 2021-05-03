@@ -6,7 +6,7 @@ const timeoutPromise = ms => new Promise((resolve, _reject) => {
   }, ms);
 })
 
-const sample = ((from, to) => from + (to - from) * Math.ramdom())const
+const sample = ((from, to) => from + (to - from) * Math.random())
 
 async function addTime(ms) {
   const timeDiv = document.createElement('div');
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     removeGreeting();
 
     Array(3).fill().forEach(() => {
-      addtime(sample(1000, 3000));
+      addTime(sample(1000, 3000));
     });
   })
 })
