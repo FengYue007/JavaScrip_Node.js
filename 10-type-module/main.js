@@ -1,3 +1,5 @@
+import removeGreeting from './remove-greeting.js';
+
 const timeoutPromise = ms => new Promise((resolve, _reject) => {
   setTimeout(() => {
     resolve();
@@ -5,13 +7,6 @@ const timeoutPromise = ms => new Promise((resolve, _reject) => {
 })
 
 const sample = ((from, to) => from + (to - from) * Math.ramdom())const
-
-function removeGreeting(){
-  const greetingDiv = document.getElementById('greeting');
-  if (greetingDiv) {
-    greetingDiv.remove();
-  }
-}
 
 async function addTime(ms) {
   const timeDiv = document.createElement('div');
