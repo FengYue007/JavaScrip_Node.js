@@ -1,8 +1,8 @@
 import Typed from "typed.js";
 
-import { timeoutPromise } from './utils.js';
+import { timeoutPromise } from "./utils.js";
 
-async function addTime(ms) {
+async function addTime (ms) {
   const timeDiv = document.createElement("div");
   const textSpan = document.createElement("span");
 
@@ -10,7 +10,7 @@ async function addTime(ms) {
   document.getElementById("container").appendChild(timeDiv);
 
   const loadingTyped = new Typed(textSpan, {
-    strings: ["Loading..."],
+    strings: ["Loading..."]
   });
 
   await timeoutPromise(ms);
@@ -22,7 +22,7 @@ async function addTime(ms) {
     typeSpeed: 30,
     onComplete: () => {
       completedTyped.cursor.remove();
-    },
+    }
   });
 }
 

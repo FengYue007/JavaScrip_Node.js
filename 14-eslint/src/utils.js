@@ -1,5 +1,5 @@
 
-export const timeoutPromise = ms => new Promise((resolve, _reject) => {
+export const timeoutPromise = ms => new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve();
   }, ms);

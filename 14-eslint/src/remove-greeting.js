@@ -1,5 +1,5 @@
-function removeGreetingIfExists() {
-  const greetingDiv = document.getElementById('greeting');
+function removeGreetingIfExists () {
+  const greetingDiv = document.getElementById("greeting");
   if (greetingDiv) {
     greetingDiv.remove();
   }
