@@ -9,17 +9,24 @@ async function addTime(timeout) {
   const timeDiv = document.createElement('div');
   document.getElementById('container').appendChild(timeDiv);
 
-  const textspan = document.createElement('span');
-  timeDiv.appendChild(textspan);
+  const textSpan = document.createElement('span');
+  timeDiv.appendChild(textSpan);
 
-  var typed = new Typed(textspan, {
+  let typed = new Typed(textSpan, {
     strings: ["Loading..."],
     typeSpeed: 30
   });
 
   await timeoutPromise(timeout);
+  typed.destroy();
 
-  timeDiv.textContent = (new Date()).toString();
+  typed = new Typed(textSpan, {
+    strings: ["Completed!",(new Date()).toString()],
+    typeSpeed: 30,
+    onComplete: () => {
+      typed.cursor.remove();
+    }
+  });
 }
 
 export default addTime;
